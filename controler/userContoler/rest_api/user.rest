@@ -1,0 +1,11 @@
+### ADD USER
+
+
+POST http://localhost:8000/user/add
+Content-Type: application/json
+
+{
+    "firstName": "Aleksandra",
+    "lastName": "Ristic",
+    "password": "kokice45"
+}

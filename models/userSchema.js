@@ -6,11 +6,11 @@ const UserSchema = new Schema({
 firstName:{type:String, required:true},
 lastName:{type:String, required:true},
 password:{type:String, required:true},
-role:{type:String, role:"admin"}
+role:{type:String, default:"user"}
 
 })
 
 
-const UserModel = model(users, UserSchema)
+const UserModel = model("users", UserSchema)
 
 module.exports = UserModel

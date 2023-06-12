@@ -1,18 +1,18 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const { DB_URL } = require('./config/config')
-require('dotenv').config()
+const { json } = require('express/lib/response')
+
 const app = express()
 
-mongoose.connect('mongodb+srv://ZdravkoRistic:n36UOjF616a82OiE@freelanceprojectone.z8pucy4.mongodb.net/?retryWrites=true&w=majority')
-.then(() =>{
-    console.log("MongoDB Connected!");
-})
-.catch((error) =>{
-    console.log({error:error.message});
-})
 
+mongoose.connect(DB_URL)
+.then(() =>console.log("MongoDB Connected!"))
+.catch((error) => console.log(error))
 
+app.use(express.json())
+
+app.use('/', require('./routes'))
 
 app.set("view engine", "ejs");
 
