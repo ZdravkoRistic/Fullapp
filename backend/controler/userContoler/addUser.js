@@ -7,6 +7,8 @@ const addUser = (req, res)=>{
 console.log(req.body);
 
 
+
+
 const newUser = new UserModel(reqBody)
 newUser.save()
 .then((savedUser)=>{
